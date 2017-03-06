@@ -1,9 +1,7 @@
 language: node_js
 node_js:
-  - stable
-
-script: "bash ./deploy.sh"
+- stable
+after_success: "bash ./deploy.sh"
 env:
   global:
-  - ENCRYPTION_LABEL: "180766a5519e"
-  - COMMIT_AUTHOR_EMAIL: "github@travis-ci.com"
+  - COMMIT_AUTHOR_EMAIL: ''

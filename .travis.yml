@@ -1,7 +1,7 @@
 language: node_js
 node_js:
 - stable
-after_success: bash ./deploy.sh
+script: bash ./deploy.sh
 env:
   global:
   - COMMIT_AUTHOR_EMAIL: ''

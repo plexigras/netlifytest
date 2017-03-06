@@ -43,7 +43,7 @@ git add --all .
 git commit -m "Deploy to GitHub Pages: ${SHA}"
 
 # Add the deploy key
-chmod 600 deploy_key
+chmod 600 ..deploy_key
 eval `ssh-agent -s`
 ssh-add ../deploy_key
 

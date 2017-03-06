@@ -7,11 +7,7 @@ TARGET_BRANCH="gh-pages"
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
     echo "Skipping deploy; just doing a build."
-    ls dist
-    # Run our compile script
-    mv index.html dist
-
-    ls dist
+    npm run build
     exit 0
 fi
 
@@ -27,11 +23,11 @@ cd dist
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
 
-ls dist
-# Run our compile script
-mv index.html dist
+# Clean out existing contents
+rm -rf dist/**/* || exit 0
 
-ls dist
+# Run our compile script
+npm run build
 
 # Now let's go have some fun with the cloned repo
 cd dist

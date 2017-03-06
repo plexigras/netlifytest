@@ -23,11 +23,13 @@ cd dist
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
 
+ls -a dist
 # Clean out existing contents
 rm -rf dist/**/* || exit 0
-
+ls -a dist
 # Run our compile script
 npm run build
+ls -a dist
 
 # Now let's go have some fun with the cloned repo
 cd dist

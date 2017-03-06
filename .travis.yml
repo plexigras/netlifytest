@@ -6,4 +6,4 @@ script: "bash ./deploy.sh"
 env:
   global:
   - ENCRYPTION_LABEL: "180766a5519e"
-  - COMMIT_AUTHOR_EMAIL: "contact@travis-ci.com"
+  - COMMIT_AUTHOR_EMAIL: "github@travis-ci.com"

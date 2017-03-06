@@ -23,18 +23,15 @@ cd dist
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
 
-file **/*
-# Clean out existing contents
-rm -rf dist/**/* || exit 0
-file **/*
 # Run our compile script
 npm run build
-file **/*
 
 # Now let's go have some fun with the cloned repo
 cd dist
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
+
+git diff
 
 # If there are no changes to the compiled (e.g. this is a README update) then just bail.
 if [ -z `git diff --exit-code` ]; then

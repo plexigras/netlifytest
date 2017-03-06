@@ -23,7 +23,7 @@ cd dist
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
 
-# Run our compile script
+# Run build script
 npm run build
 
 # Now let's go have some fun with the cloned repo

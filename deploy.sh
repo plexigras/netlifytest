@@ -23,10 +23,8 @@ cd dist
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
 
-file dist/**/*
 # Run our compile script
 npm run build
-file dist/**/*
 
 # Now let's go have some fun with the cloned repo
 cd dist

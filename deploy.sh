@@ -28,6 +28,7 @@ npm run build
 
 # Now let's go have some fun with the cloned repo
 cd dist
+git config user.name "Travis CI"
 
 # If there are no changes to the compiled (e.g. this is a README update) then just bail.
 if [ -z `git diff --exit-code` ]; then
@@ -37,7 +38,7 @@ fi
 
 # Commit the "changes", i.e. the new version.
 # The delta will show diffs between new and old versions.
-git add --all .
+git add -all .
 git commit -m "Deploy to GitHub Pages: ${SHA}"
 
 # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
